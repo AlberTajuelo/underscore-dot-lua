@@ -1,18 +1,15 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.shift"] = function()
-	before = function()
-		input = { 1,2 }
-		result = _.shift(input)
-	end
-	
-	it["should return the first item of the array"] = function()		
-		expect(result).should_be(1)	
-	end	
-	
-	it["should remove the first item from the array"] = function()
-		expect(input).should_equal {2}
-	end
-end
+describe("_.shift", function()
 
-spec:report(true)
+  local input = {1, 2}
+  local result = _.shift(input)
+
+  it("should return the first item of the array", function()
+    assert.are.equals(result, 1)
+  end)
+
+  it("should remove the first item from the array", function()
+    assert.are.same(input, {2})
+  end)
+end)

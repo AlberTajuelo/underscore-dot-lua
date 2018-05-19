@@ -1,11 +1,12 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["chaining"] = function()
-	it["should be able to chain calls and retrieve the value"] = function()
-		result = _({ 1,2,3 }):chain():map(function(i) return i*2 end):map(function(i) return i*2 end):value()
-		
-		expect(result).should_equal {4,8,12}
-	end
-end
+describe("_.chaining", function()
+  it("should be able to chain calls and retrieve the value", function()
 
-spec:report(true)
+    local input = {1, 2, 3}
+    local result = _(input):chain():map(function(i) return i * 2 end):map(function(i) return i * 2 end):value()
+
+    assert.are.same(result, {4, 8, 12})
+
+  end)
+end)

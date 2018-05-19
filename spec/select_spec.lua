@@ -1,15 +1,11 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.select"] = function()
-	before = function()
-		input = { 1,2,3 }
-		result = _.select(input, function(i) return i>2 end)
-	end
-	
-	it["should return an array with only elements that do pass the truth function"] = function()
-		expect(result).should_equal {3}
-	end
-end
+describe("_.select", function()
 
+  local input = {1, 2, 3}
+  local result = _.select(input, function(i) return i > 2 end)
 
-spec:report(true)
+  it("should return an array with only elements that do pass the truth function", function()
+    assert.are.same(result, {3})
+  end)
+end)

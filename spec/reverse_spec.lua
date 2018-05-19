@@ -1,11 +1,11 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.reverse"] = function()
-	it["should return a reversed array"] = function()
-		input = { 1,2,3 }
-		result = _.reverse(input)
-		expect(result).should_equal {3,2,1}
-	end
-end
+describe("_.reverse", function()
+  it("should return a reversed array", function()
 
-spec:report(true)
+    local input = {1, 2, 3}
+    local result = _.reverse(input)
+
+    assert.are.same(result, {3,2,1})
+  end)
+end)

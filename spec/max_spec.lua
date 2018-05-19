@@ -1,22 +1,19 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.max"] = function()
-	describe["when not providing a transformation function"] = function()
-		it["should return the largest item in the list"] = function()
-			input = { 1,2,3,2,1 }
-			result = _.max(input)
-			expect(result).should_be(3)
-		end	
-	end
-	
-	describe["when providing a transformation function"] = function()
-		it["should item in the list that has the largest tranformed value"] = function()
-			input = { 1,2,3 }
-			result = _.max(input, function(i) return -i end)
-			expect(result).should_be(1)
-		end
-	end	
-end
+describe("_.min", function()
+  describe("when not providing a transformation function", function()
+    it("should return the largest item in the list", function()
+      local input = {1, 2, 3, 2, 1}
+      local result = _.max(input)
+      assert.are.equals(result, 3)
+    end)
+  end)
 
-
-spec:report(true)
+  describe("when providing a transformation function", function()
+    it("should item in the list that has the largest tranformed value", function()
+      local input = {1, 2, 3}
+      local result = _.max(input, function(i) return -i end)
+      assert.are.equals(result, 1)
+    end)
+  end)
+end)

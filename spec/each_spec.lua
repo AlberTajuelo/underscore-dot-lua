@@ -1,20 +1,15 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.each"] = function()
-	before = function()
-		input = { 1,2,3 }
-		func = Mock:new()
-		result = _.each(input, func)
-	end
-	
-	it["should call the function on each element"] = function()
-		expect(func).was_called(3)
-	end
-	
-	it["should return the input"] = function()
-		expect(result).should_be(result)
-	end
-end
+describe("_.each", function()
+  local input = {1, 2, 3}
+  local func = mock(function() end)
+  local result = _.each(input, func)
 
+  it("should call the function on each element", function()
+    assert.spy(func).was.called_with(3)
+  end)
 
-spec:report(true)
+  it("should return the input", function()
+    assert.are.equals(result, input)
+  end)
+end)

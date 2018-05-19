@@ -38,7 +38,7 @@ This repository is a fork from [this repo](https://github.com/ashe-dolinsky-old/
 
 ## Requirements
 
-None (other than Lua 5.1 or 5.2).
+None.
 
 ## Basic Usage
 

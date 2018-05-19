@@ -1,14 +1,10 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.flatten"] = function()
-	before = function()
-		input = { 1,2,{3,4,{5}},{{6,7}}}
-		result = _.flatten(input)
-	end
-	
-	it["should return an array with each item"] = function()
-		expect(result).should_equal {1,2,3,4,5,6,7}
-	end
-end
+describe("_.flatten", function()
+  local input = {1, 2, {3, 4, {5}}, {{6, 7}}}
+  local result = _.flatten(input)
 
-spec:report(true)
+  it("should return an array with each item", function()
+    assert.are.same(result, {1, 2, 3, 4, 5, 6, 7})
+  end)
+end)

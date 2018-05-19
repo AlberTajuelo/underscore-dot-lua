@@ -3,7 +3,7 @@ local _ = require("src/underscore")
 local input
 local result
 
-describe("#all", function()
+describe("_.all", function()
   describe("when providing a truth function", function()
     describe("when some of the elements pass the function", function()
       it("should return true", function()
@@ -13,7 +13,7 @@ describe("#all", function()
 
       end)
     end)
-    
+
     describe("when none of the elements pass the function", function()
       it("should return false", function()
         input = {1, 3, 5}
@@ -33,7 +33,7 @@ describe("#all", function()
         assert(result)
       end)
     end)
-    
+
     describe("when none of the elements are not true", function()
       it("should return false", function()
         input = {false, false}

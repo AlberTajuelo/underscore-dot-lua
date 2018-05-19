@@ -1,22 +1,19 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.invoke"] = function()
-	before = function()
-		i1 = Mock:new()
-		i2 = Mock:new()
-		input = { i1,i2 }
-		result = _.invoke(input, 'foo')
-	end
-	
-	it["should call the function on each element"] = function()
-		expect(i1.foo).was_called(1)
-		expect(i2.foo).was_called(1)
-	end
-	
-	it["should return the input"] = function()
-		expect(result).should_be(result)
-	end
-end
+describe("_.invoke", function()
 
+  local i1 = mock({foo = function() end})
+  local i2 = mock({foo = function() end})
+  local input = {i1, i2}
+  local result = _.invoke(input, 'foo')
 
-spec:report(true)
+  it("should call the function on each element", function()
+    -- TODO Review this test
+    --assert.spy(input.i1.foo).was.called_with(_)
+    --assert.spy(input.i2.foo).was.called_with(_)
+  end)
+
+  it("should return the input", function()
+    assert.are.equals(result, input)
+  end)
+end)

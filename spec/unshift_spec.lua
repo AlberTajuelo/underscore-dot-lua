@@ -1,18 +1,14 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.unshift"] = function()
-	before = function()
-		input = { 1,2 }
-		result = _.unshift(input, 3)
-	end
-	
-	it["should add the item onto the beginning of the array"] = function()		
-		expect(result).should_equal {3,1,2}
-	end	
-	
-	it["should return the input array"] = function()
-		expect(result).should_be(input)	
-	end
-end
+describe("_.unshift", function()
 
-spec:report(true)
+  local input = {1, 2}
+  local result = _.unshift(input, 3)
+
+  it("should add the item onto the beginning of the array", function()
+    assert.are.same(result, {3, 1, 2})
+  end)
+  it("should return the input array", function()
+    assert.are.equals(result, input)
+  end)
+end)

@@ -1,15 +1,15 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.values"] = function()
-	it["should return an array with all property values"] = function()
-		input = { a = 1, b = 2, c = 3 }
-		values = _.values(input)
-		
-		expect(#values).should_be(3)
-		expect(_.include(values, 1)).should_be(true)
-		expect(_.include(values, 2)).should_be(true)
-		expect(_.include(values, 3)).should_be(true)
-	end
-end
+describe("_.values", function()
+  it("should return an array with all property values", function()
 
-spec:report(true)
+    local input = {a = 1, b = 2, c = 3}
+    local values = _.values(input)
+
+    assert.are.equals(#values, 3)
+    assert.are.equals(_.include(values, 1), true)
+    assert.are.equals(_.include(values, 2), true)
+    assert.are.equals(_.include(values, 3), true)
+
+  end)
+end)

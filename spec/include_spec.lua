@@ -1,18 +1,15 @@
-require 'spec_helper'
+local _ = require("src/underscore")
 
-describe["_.include"] = function()
-	it["should return the true if the item is in the list"] = function()
-		input = { 1,2,3 }
-		result = _.include(input, 2)
-		expect(result).should_be(true)
-	end
-	
-	it["should return false when the item is not in the list"] = function()
-		input = { 1,2,3 }
-		result = _.include(input, 4)
-		expect(result).should_be(false)
-	end
-end
+describe("_.include", function()
+  it("should return the true if the item is in the list", function()
+    local input = {1, 2, 3}
+    local result = _.include(input, 2)
+    assert.are.equals(result, true)
+  end)
 
-
-spec:report(true)
+  it("should return false when the item is not in the list", function()
+    local input = {1, 2, 3}
+    local result = _.include(input, 4)
+    assert.are.equals(result, false)
+  end)
+end)
