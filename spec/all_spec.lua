@@ -44,5 +44,4 @@ describe("#all", function()
       end)
     end)
   end)
-
 end)

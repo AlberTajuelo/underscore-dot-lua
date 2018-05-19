@@ -17,7 +17,7 @@ describe("#all", function()
     describe("when none of the elements pass the function", function()
       it("should return false", function()
         input = {1, 3, 5}
-        result = _.any(input, function(i) return i%2==0 end)
+        result = _.any(input, function(i) return i % 2 == 0 end)
 
         assert(not result)
       end)
