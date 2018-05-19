@@ -1,5 +1,8 @@
 local _ = require("src/underscore")
 
+local input
+local result
+
 describe("#all", function()
 
   describe("provide a truth function", function()
